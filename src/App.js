@@ -1,14 +1,16 @@
 import "./App.css";
-import "bootstrap/dist/css/bootstrap.css";
-// import { Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+import { Login } from "./views/login";
+import { ForgotPassword } from "./views/forgotPassword";
 
 function App() {
   return (
     <div>
-
-      {/* <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes> */}
+      <Login/>
+      <Routes>
+        <Route path="/" element={<Login/>} />
+        <Route path="/forgotPassword" element={<ForgotPassword/>} />
+      </Routes>
     </div>
   );
 }
