@@ -6,16 +6,16 @@ import swal from 'sweetalert';
 
 export const LoginForm = function() {
 
-    const [userData, setUserData] = useState({
+    const [userLogin, setUserLogin] = useState({
         username: "",
         password: ""
     }); 
 
     const loginValidation = function(){
-        if(userData.username === "" || userData.password === "") {
+        if(userLogin.username === "" || userLogin.password === "") {
             swal({
                 title: "ERROR",
-                text: "Completa todos los campos para continuar.",
+                text: "Completa todos los campos para iniciar sesión.",
                 icon: "info",
               });
         }
@@ -30,18 +30,20 @@ export const LoginForm = function() {
 
          <form>
          <label className={logintStyles.LoginBoxLabel} for="usuario"> Usuario </label>
-         <input onChange={(e) => setUserData({...userData,username:e.target.value})} className={logintStyles.LoginBoxInput} type="text" placeholder="Ingrese su nombre de usuario"/>
+         <input onChange={(e) => setUserLogin({...userLogin,username:e.target.value})} className={logintStyles.LoginBoxInput} type="text" placeholder="Ingrese su nombre de usuario"/>
 
          <label className={logintStyles.LoginBoxLabel} for="password">Contraseña</label>
-         <input onChange={(e) => setUserData({...userData,password:e.target.value})} className={logintStyles.LoginBoxInput} type="password" placeholder="Ingrese su contraseña"/>
+         <input onChange={(e) => setUserLogin({...userLogin,password:e.target.value})} className={logintStyles.LoginBoxInput} type="password" placeholder="Ingrese su contraseña"/>
 
-         <input onClick= {() => loginValidation()} className={logintStyles.LoginBoxButton} type={"button"} value="Iniciar sesión"/>
+         <input onClick= {() => loginValidation()} className={logintStyles.LoginBoxButton} type="button" value="Iniciar sesión"/>
 
-         <label className={logintStyles.LoginBoxForgotPassword} for="forgotpassword">¿Has olvidado tu contraseña?</label>
-         <Link to='/forgotPassword'> Click aqui </Link>    
-         </form>
+        <label className={logintStyles.LoginBoxForgotPassword} for="forgotpassword">
+            ¿Has olvidado tu contraseña?
+            <Link to='/forgotPassword' style={{marginLeft: "0.1em", textDecoration: "none"}}> click aqui </Link>     
+        </label>
+        </form>
 
-         </div>
+        </div>
         </>
     )
 }

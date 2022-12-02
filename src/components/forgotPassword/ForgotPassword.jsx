@@ -1,14 +1,15 @@
 import { useState } from 'react'
 import forgotPasswordStyles from './forgotPassword.module.css'
+import { Link } from "react-router-dom";
 import Logo from '../img/logo.jpeg'
 import swal from 'sweetalert';
 
-export const ForgotPasswordForm = function() {
+export const ForgotPasswordForm = () => {
 
-    const [emailData, setEmailData] = useState(""); 
+    const [forgotPasswordEmail, setForgotPasswordEmail] = useState(""); 
 
-    const loginValidation = function(){
-        if(emailData.username === "") {
+    const loginValidation = () => {
+        if(forgotPasswordEmail === "") {
             swal({
                 title: "ERROR",
                 text: "Por favor ingresar tu correo electrónico.",
@@ -22,15 +23,18 @@ export const ForgotPasswordForm = function() {
          <div className={forgotPasswordStyles.LoginBox}>
          <img className={forgotPasswordStyles.LoginBoxLogo} 
          src={Logo} alt="Logo de la barberia"/> 
-         <h1 className={forgotPasswordStyles.LoginBoxH1}>Iniciar Sesión</h1>   
+         <h1 className={forgotPasswordStyles.LoginBoxH1}>Recuperar Contraseña</h1>   
 
-         <form>
-         <label className={forgotPasswordStyles.LoginBoxLabel} for="usuario"> Usuario </label>
-         <input onChange={(e) => setEmailData(e.target.value)} className={forgotPasswordStyles.LoginBoxInput} type="text" placeholder="Ingrese su nombre de usuario"/>
+         <form onSubmit={loginValidation}>
+         <label className={forgotPasswordStyles.LoginBoxLabel} for="usuario"> Correo electrónico </label>
+         <input onChange={(e) => setForgotPasswordEmail(e.target.value)} className={forgotPasswordStyles.LoginBoxInput} type="text" placeholder="Ingrese su correo electrónico"/>
 
-         <input onClick= {() => loginValidation()} className={forgotPasswordStyles.LoginBoxButton} type={"button"} value="Iniciar sesión"/>
+         <input onClick= {() => loginValidation()} className={forgotPasswordStyles.LoginBoxButton} type="button" value="Recuperar contraseña"/>
 
-         <label className={forgotPasswordStyles.LoginBoxForgotPassword} for="forgotpassword">¿Has olvidado tu contraseña?</label>
+         <label className={forgotPasswordStyles.LoginBoxLogin} for="forgotpassword">
+            Ingresar a mi cuenta
+            <Link to='/' style={{marginLeft: "0.1em", textDecoration: "none"}}> click aqui </Link>     
+        </label>
          </form>
 
          </div>

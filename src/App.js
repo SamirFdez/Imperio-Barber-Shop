@@ -5,13 +5,10 @@ import { ForgotPassword } from "./views/forgotPassword";
 
 function App() {
   return (
-    <div>
-      <Login/>
       <Routes>
-        <Route path="/" element={<Login/>} />
-        <Route path="/forgotPassword" element={<ForgotPassword/>} />
+        <Route path="/" element={<Login />} />
+        <Route path="/forgotPassword" element={<ForgotPassword />} />
       </Routes>
-    </div>
   );
 }
 
