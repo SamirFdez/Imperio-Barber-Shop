@@ -33,7 +33,7 @@ export const ForgotPasswordForm = () => {
 
          <label className={forgotPasswordStyles.LoginBoxLogin} for="forgotpassword">
             Ingresar a mi cuenta
-            <Link to='/' style={{marginLeft: "0.1em", textDecoration: "none"}}> click aqui </Link>     
+            <Link to='/login' style={{marginLeft: "0.1em", textDecoration: "none"}}> click aquí </Link>     
         </label>
          </form>
 

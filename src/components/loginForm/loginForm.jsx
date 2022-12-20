@@ -39,7 +39,7 @@ export const LoginForm = function() {
 
         <label className={logintStyles.LoginBoxForgotPassword} for="forgotpassword">
             ¿Has olvidado tu contraseña?
-            <Link to='/forgotPassword' style={{marginLeft: "0.1em", textDecoration: "none"}}> click aqui </Link>     
+            <Link to='/forgotPassword' style={{marginLeft: "0.1em", textDecoration: "none"}}> click aquí  </Link>     
         </label>
         </form>
 

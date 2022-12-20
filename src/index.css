@@ -14,7 +14,6 @@ body{
   box-sizing: border-box;
   font-family: 'Times New Roman', Times, serif;
   text-decoration: none;
-  background: rgb(34,193,195);
-  background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,139,45,1) 100%);
+  background-image: linear-gradient(to bottom, #2bbfe4, #5bcfd2, #91dbc2, #c1e4bd, #eaecc6);
 }
 
